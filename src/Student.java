@@ -23,6 +23,10 @@ public class Student
         return present;
     }
 
+    @Override
+    public String toString() {
+        return name + " (" + (present ? "Present" : "Absent") + ")";
+    }
 
 
 }
