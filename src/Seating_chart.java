@@ -30,6 +30,37 @@ public class Seating_chart {
         this.RowI = RowI;
     }
 
+    //method that says which students are absent
+    public ArrayList<Student> these_are_absent_students(ArrayList<ArrayList<Student>> seating_chart)
+    {
+        System.out.println("These students are absent today");
+        ArrayList<Student> absentList = new ArrayList<>();
+        for (int i =0; i < seating_chart.size(); i++)
+        {
+            for (int j = 0; j < seating_chart.get(i).size(); j++)
+            {
+                if (!seating_chart.get(i).get(j).getPresent())
+                {
+                    Student absent_student = seating_chart.get(i).get(j);
+                    absentList.add(absent_student);
+                }
+            }
+        }
+        return absentList;
+    }
+
+    
+
+    //are they late or absent?
+    //public
+
     //toString as 2d array
+
+    //make user input rows
+    //make seating chart as is
+    //make absentList
+    //print come back before the end of the period
+    //are these people still absent method, no or yes then change presentstatus
+    //these people are late method, email message
 
 }
