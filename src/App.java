@@ -3,8 +3,34 @@ import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) throws Exception {
-        System.out.println("Attendence round 1");
+
+
+        // take attendence from rows
         Scanner scanner = new Scanner(System.in);
+        ArrayList<Student> rowA = new ArrayList<Student>();
+        boolean statusA = null;
+        for (int A = 1; A < 5; A++)
+        {
+            System.out.println("Which student sits at A: " + A);
+            String inputNameA = scanner.nextLine();
+            System.out.println("Is the student here today? (P or A)");
+            String p_or_a = scanner.nextLine();
+            if (p_or_a.equals("p"))
+            {
+                statusA = true;
+            }
+            else
+            {
+                statusA = false;
+            }
+            scanner.nextLine();
+            Student newStudent = new Student(inputNameA, statusA);
+            rowA.add(newStudent);
+        }
+        //print rowA
+        
+        System.out.println("Attendence round 1");
+
         // make empty arraylist with students
         ArrayList<ArrayList<Student>> seating_chart = new ArrayList<ArrayList<Student>>();
 
