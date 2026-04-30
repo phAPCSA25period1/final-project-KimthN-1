@@ -4,167 +4,157 @@ import java.util.Scanner;
 public class App {
     public static void main(String[] args) throws Exception {
 
-
         // take attendence from rows
         Scanner scanner = new Scanner(System.in);
         ArrayList<Student> rowA = new ArrayList<Student>();
-        boolean statusA = null;
-        for (int A = 1; A < 5; A++)
-        {
+        boolean statusA = true;
+        for (int A = 1; A < 5; A++) {
             System.out.println("Which student sits at A: " + A);
             String inputNameA = scanner.nextLine();
             System.out.println("Is the student here today? (P or A)");
             String p_or_a = scanner.nextLine();
-            if (p_or_a.equals("p"))
-            {
+            if (p_or_a.equals("P")) {
                 statusA = true;
-            }
-            else
-            {
+            } else {
                 statusA = false;
             }
-            scanner.nextLine();
             Student newStudent = new Student(inputNameA, statusA);
             rowA.add(newStudent);
         }
-        //print rowA
-        
-        System.out.println("Attendence round 1");
+        System.out.println(rowA);
 
-        // make empty arraylist with students
-        ArrayList<ArrayList<Student>> seating_chart = new ArrayList<ArrayList<Student>>();
-
-        // user input to put each student into roster
-        for (int i = 0; i < 9; i++) {
-            ArrayList<Student> row = new ArrayList<Student>();
-            if (i == 0) {
-                for (int j = 0; j < 4; j++) {
-                    System.out.println("Which student sits at A:" + j);
-                    String inputName = scanner.nextLine();
-                    System.out.println("Is the student here today? (True/False)");
-                    boolean status = scanner.nextBoolean();
-                    scanner.nextLine();
-                    Student newStudent = new Student(inputName, status);
-                    row.add(newStudent);
-                }
-                seating_chart.add(row);
+        ArrayList<Student> rowB = new ArrayList<Student>();
+        boolean statusB = true;
+        for (int B = 1; B < 5; B++) {
+            System.out.println("Which student sits at B: " + B);
+            String inputNameB = scanner.nextLine();
+            System.out.println("Is the student here today? (P or A)");
+            String p_or_a = scanner.nextLine();
+            if (p_or_a.equals("P")) {
+                statusB = true;
+            } else {
+                statusB = false;
             }
-            if (i == 1) {
-                for (int j = 0; j < 4; j++) {
-                    System.out.println("Which student sits at B:" + j);
-                    String inputName = scanner.nextLine();
-                    System.out.println("Is the student here today? (True/False)");
-                    boolean status = scanner.nextBoolean();
-                    scanner.nextLine();
-                    Student newStudent = new Student(inputName, status);
-                    row.add(newStudent);
-                }
-                seating_chart.add(row);
-            }
-
-            if (i == 2) {
-                for (int j = 0; j < 4; j++) {
-                    System.out.println("Which student sits at C:" + j);
-                    String inputName = scanner.nextLine();
-                    System.out.println("Is the student here today? (True/False)");
-                    boolean status = scanner.nextBoolean();
-                    scanner.nextLine();
-                    Student newStudent = new Student(inputName, status);
-                    row.add(newStudent);
-                }
-                seating_chart.add(row);
-            }
-
-            if (i == 3) {
-                for (int j = 0; j < 4; j++) {
-                    System.out.println("Which student sits at D:" + j);
-                    String inputName = scanner.nextLine();
-                    System.out.println("Is the student here today? (True/False)");
-                    boolean status = scanner.nextBoolean();
-                    scanner.nextLine();
-                    Student newStudent = new Student(inputName, status);
-                    row.add(newStudent);
-                }
-                seating_chart.add(row);
-            }
-
-            if (i == 4) {
-                for (int j = 0; j < 4; j++) {
-                    System.out.println("Which student sits at E:" + j);
-                    String inputName = scanner.nextLine();
-                    System.out.println("Is the student here today? (True/False)");
-                    boolean status = scanner.nextBoolean();
-                    scanner.nextLine();
-                    Student newStudent = new Student(inputName, status);
-                    row.add(newStudent);
-                }
-                seating_chart.add(row);
-            }
-
-            if (i == 5) {
-                for (int j = 0; j < 4; j++) {
-                    System.out.println("Which student sits at F:" + j);
-                    String inputName = scanner.nextLine();
-                    System.out.println("Is the student here today? (True/False)");
-                    boolean status = scanner.nextBoolean();
-                    scanner.nextLine();
-                    Student newStudent = new Student(inputName, status);
-                    row.add(newStudent);
-                }
-                seating_chart.add(row);
-            }
-
-            if (i == 6) {
-                for (int j = 0; j < 4; j++) {
-                    System.out.println("Which student sits at G:" + j);
-                    String inputName = scanner.nextLine();
-                    System.out.println("Is the student here today? (True/False)");
-                    boolean status = scanner.nextBoolean();
-                    scanner.nextLine();
-                    Student newStudent = new Student(inputName, status);
-                    row.add(newStudent);
-                }
-                seating_chart.add(row);
-            }
-
-            if (i == 7) {
-                for (int j = 0; j < 4; j++) {
-                    System.out.println("Which student sits at H:" + j);
-                    String inputName = scanner.nextLine();
-                    System.out.println("Is the student here today? (True/False)");
-                    boolean status = scanner.nextBoolean();
-                    scanner.nextLine();
-                    Student newStudent = new Student(inputName, status);
-                    row.add(newStudent);
-                }
-                seating_chart.add(row);
-            }
-
-            if (i == 8) {
-                for (int j = 0; j < 4; j++) {
-                    System.out.println("Which student sits at I:" + j);
-                    String inputName = scanner.nextLine();
-                    System.out.println("Is the student here today? (True/False)");
-                    boolean status = scanner.nextBoolean();
-                    scanner.nextLine();
-                    Student newStudent = new Student(inputName, status);
-                    row.add(newStudent);
-                }
-                seating_chart.add(row);
-            }
+            Student newStudent = new Student(inputNameB, statusB);
+            rowB.add(newStudent);
         }
+        System.out.println(rowB);
+
+        ArrayList<Student> rowC = new ArrayList<Student>();
+        boolean statusC = true;
+        for (int C = 1; C < 5; C++) {
+            System.out.println("Which student sits at C: " + C);
+            String inputNameC = scanner.nextLine();
+            System.out.println("Is the student here today? (P or A)");
+            String p_or_a = scanner.nextLine();
+            if (p_or_a.equals("P")) {
+                statusC = true;
+            } else {
+                statusC = false;
+            }
+            Student newStudent = new Student(inputNameC, statusC);
+            rowC.add(newStudent);
+        }
+
+        ArrayList<Student> rowD = new ArrayList<Student>();
+        boolean statusD = true;
+        for (int D = 1; D < 5; D++) {
+            System.out.println("Which student sits at D: " + D);
+            String inputNameD = scanner.nextLine();
+            System.out.println("Is the student here today? (P or A)");
+            String p_or_a = scanner.nextLine();
+            if (p_or_a.equals("P")) {
+                statusD = true;
+            } else {
+                statusD = false;
+            }
+            Student newStudent = new Student(inputNameD, statusD);
+            rowD.add(newStudent);
+        }
+
+        ArrayList<Student> rowE = new ArrayList<Student>();
+        boolean statusE = true;
+        for (int E = 1; E < 5; E++) {
+            System.out.println("Which student sits at E: " + E);
+            String inputNameE = scanner.nextLine();
+            System.out.println("Is the student here today? (P or A)");
+            String p_or_a = scanner.nextLine();
+            if (p_or_a.equals("P")) {
+                statusE = true;
+            } else {
+                statusE = false;
+            }
+            Student newStudent = new Student(inputNameE, statusE);
+            rowE.add(newStudent);
+        }
+
+        ArrayList<Student> rowF = new ArrayList<Student>();
+        boolean statusF = true;
+        for (int F = 1; F < 5; F++) {
+            System.out.println("Which student sits at F: " + F);
+            String inputNameF = scanner.nextLine();
+            System.out.println("Is the student here today? (P or A)");
+            String p_or_a = scanner.nextLine();
+            if (p_or_a.equals("P")) {
+                statusF = true;
+            } else {
+                statusF = false;
+            }
+            Student newStudent = new Student(inputNameF, statusF);
+            rowF.add(newStudent);
+        }
+
+        ArrayList<Student> rowG = new ArrayList<Student>();
+        boolean statusG = true;
+        for (int G = 1; G < 5; G++) {
+            System.out.println("Which student sits at G: " + G);
+            String inputNameG = scanner.nextLine();
+            System.out.println("Is the student here today? (P or A)");
+            String p_or_a = scanner.nextLine();
+            if (p_or_a.equals("P")) {
+                statusG = true;
+            } else {
+                statusG = false;
+            }
+            Student newStudent = new Student(inputNameG, statusG);
+            rowG.add(newStudent);
+        }
+
+        ArrayList<Student> rowH = new ArrayList<Student>();
+        boolean statusH = true;
+        for (int H = 1; H < 5; H++) {
+            System.out.println("Which student sits at H: " + H);
+            String inputNameH = scanner.nextLine();
+            System.out.println("Is the student here today? (P or A)");
+            String p_or_a = scanner.nextLine();
+            if (p_or_a.equals("P")) {
+                statusH = true;
+            } else {
+                statusH = false;
+            }
+            Student newStudent = new Student(inputNameH, statusH);
+            rowH.add(newStudent);
+        }
+
+        ArrayList<Student> rowI = new ArrayList<Student>();
+        boolean statusI = true;
+        for (int I = 1; I < 5; I++) {
+            System.out.println("Which student sits at I: " + I);
+            String inputNameI = scanner.nextLine();
+            System.out.println("Is the student here today? (P or A)");
+            String p_or_a = scanner.nextLine();
+            if (p_or_a.equals("P")) {
+                statusI = true;
+            } else {
+                statusI = false;
+            }
+            Student newStudent = new Student(inputNameI, statusI);
+            rowI.add(newStudent);
+        }
+
         scanner.close();
-        for (int i = 0; i < seating_chart.size(); i++) {
-            char rowLetter = (char) ('A' + i);
-            System.out.print("Row " + rowLetter + ": ");
-            ArrayList<Student> row = seating_chart.get(i);
-            for (Student s : row) {
-                System.out.print("[" + s + "] ");
-            }
-            System.out.println(); // Move to the next line for the next row
-        }
+
+        Seating_chart bah = new Seating_chart(rowA, rowB, rowC, rowD, rowE, rowF, rowG, rowG, rowI);
 
     }
 }
-
-
