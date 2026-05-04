@@ -155,6 +155,7 @@ public class App {
         scanner.close();
 
         Seating_chart bah = new Seating_chart(rowA, rowB, rowC, rowD, rowE, rowF, rowG, rowG, rowI);
-
+        String result = bah.toString();
+        System.out.println(result);
     }
 }

@@ -46,6 +46,10 @@ public class Seating_chart {
         return absentList;
     }
 
+    
+
+
+
     // are they late or absent?
     // public
 
