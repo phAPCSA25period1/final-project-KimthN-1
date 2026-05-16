@@ -8,7 +8,19 @@ import java.util.ArrayList;
 public class Seating_chart {
     private ArrayList<ArrayList<Student>> rows;
 
-    // constructor
+    /**
+     * Creates a seating chart from nine rows of students.
+     *
+     * @param RowA students in row A
+     * @param RowB students in row B
+     * @param RowC students in row C
+     * @param RowD students in row D
+     * @param RowE students in row E
+     * @param RowF students in row F
+     * @param RowG students in row G
+     * @param RowH students in row H
+     * @param RowI students in row I
+     */
     Seating_chart(ArrayList<Student> RowA, ArrayList<Student> RowB, ArrayList<Student> RowC, ArrayList<Student> RowD,
             ArrayList<Student> RowE, ArrayList<Student> RowF, ArrayList<Student> RowG, ArrayList<Student> RowH,
             ArrayList<Student> RowI) {
@@ -24,19 +36,41 @@ public class Seating_chart {
         rows.add(RowI);
     }
 
+    /**
+     * Returns the number of rows in this seating chart.
+     *
+     * @return the row count
+     */
     public int size() {
         return rows.size();
     }
 
+    /**
+     * Returns the student list for the requested row index.
+     *
+     * @param index the zero-based row index
+     * @return the students in the row
+     */
     public ArrayList<Student> get(int index) {
         return rows.get(index);
     }
 
+    /**
+     * Finds all absent students in this seating chart.
+     *
+     * @return a list of absent students
+     */
     public ArrayList<Student> these_are_absent_students() {
         return these_are_absent_students(rows);
     }
 
     // method that says which students are absent
+    /**
+     * Finds all absent students in the given seating chart.
+     *
+     * @param seating_chart the seating arrangement to search
+     * @return a list of absent students from the provided seating chart
+     */
     public ArrayList<Student> these_are_absent_students(ArrayList<ArrayList<Student>> seating_chart) {
         System.out.println("These students are absent today");
         ArrayList<Student> absentList = new ArrayList<>();

@@ -1,189 +1,57 @@
-[![Open in Codespaces](https://classroom.github.com/assets/launch-codespace-2972f46106e565e64193e422d61a12cf1da4916b45550586e14ef0a7c637dd04.svg)](https://classroom.github.com/open-in-codespaces?assignment_repo_id=23508494)
-# AP Computer Science A – Final Project
-## Software & Systems Development Capstone
+# Attendence Tracker
 
-Welcome to your **Final Project repository**.
+## Project Information
 
-This repository will hold:
-- Your complete Java project
-- Your project journal and planning artifacts
-- Your final, working software product
+- **Project Title:** Attendence Tracker
+- **Short description:** The program helps busy teachers record attendence correctly, focusing on late and absent students.
+- **Programming language:** Java
 
-This is not just an assignment — it is a **capstone software project**.
+## 1. Project Description
 
----
+The goal of this project is to help teachers manage classroom attendence more accurately by tracking absent students and identifying those who arrive late. Users can enter student names and presence status row by row, review which students were absent, and then mark late arrivals after they appear. This project is interesting because it combines classroom workflow with attendance correction and provides a simple email template for notifying the office about late arrivals.
 
-## 📌 Project Overview (Read Carefully)
+## 2. Features
 
-In this project, you will:
-- Design and build a **real piece of software**
-- Solve **one real problem** for **one clearly defined user**
-- Work using **agile development**
-- Show evidence of **professional software practices**
-- Use AI responsibly as a planning and support tool
+- Record student names and present/absent status for each seating row
+- Display a seating chart with row labels
+- identify absent students automatically
+- Ask which absent students have arrived late
+- Store late arrivals in a separate list
+- Generate a ready-to-use office email template for late students
 
-You will leave this course with something you can confidently say:
+## 3. Code Structure and Design
 
-> “I built this software.”
+The main classes are `App`, `Seating_chart`, and `Student`. `App` handles user input, program flow, and output. `Seating_chart` stores the classroom rows in a 2D list and provides methods for checking attendance. `Student` represents each student with a name and a presence status.
 
----
+Objects interact by having `App` build row lists of `Student` objects, pass them into `Seating_chart`, and then use `Seating_chart` methods to identify absent students. Data is stored in `ArrayList<Student>` for each row and `ArrayList<ArrayList<Student>>` inside `Seating_chart` for the full seating layout. In this project, abstraction is used by keeping attendance logic inside `Seating_chart` and keeping `App` focused on user interaction.
 
-## 🔁 Required Workflow (How You Must Work)
+A UML diagram will be embedded or linked in this section when the final documentation is complete.
 
-### ✅ Daily GitHub Commits (Required)
-You are expected to:
-- Make **at least one meaningful commit every class day**
-- Write **descriptive commit messages** that explain:
-  - What you changed
-  - Why you changed it
-  - What goal it supports
+## 4. How to Run the Program
 
-✅ Good commit messages:
-- `Sprint 1: Created Player class and tested constructor`
-- `Sprint 2: Implemented 2D map and verified movement logic`
+1. Open a terminal in the project folder.
+2. Compile the Java files with:
+   ```bash
+   javac src/*.java
+   ```
+3. Run the program with:
+   ```bash
+   java -cp src App
+   ```
+4. Enter student names and presence status when prompted.
+5. After the seating chart prints, answer whether each absent student is now present.
+6. Review the list of late students and the generated email templates.
 
-🚫 Poor commit messages:
-- `updates`
-- `stuff`
-- `final version`
+## 5. Development Process
 
-Your commit history is **evidence of your thinking and progress**.
+A challenge during development was organizing the seating chart so it could be treated like a 2D structure while keeping the user interface simple. I solved this by storing rows in an `ArrayList<ArrayList<Student>>` and adding helper methods in `Seating_chart` for row access. With more time, I would improve the program by adding validation for user input and a more polished menu-driven interface.
 
----
+## 6. Use of AI Tools
 
-## 🔁 Agile Development & Sprints
+I used AI tools for brainstorming and debugging while writing this project. AI suggestions helped clarify method calls and improve the program flow, but every code change was reviewed and tested by me. I understand the final code and confirm that all AI-assisted changes were evaluated and validated by the student.
 
-You will complete **4 sprints**.  
-Each sprint includes:
-- Planning
-- Building
-- Testing
-- Feedback and reflection
+## 7. Author Information
 
-Each sprint ends with:
-- A sprint grade
-- A sprint reflection
-- Feedback exchanged with peers
-
-🚫 You may NOT complete multiple sprints at once.  
-✅ Each sprint grade is **final**.
-
----
-
-## 🧪 Testing Expectations
-
-Testing is required every sprint.
-
-✅ Testing may include:
-- Running the program with different inputs
-- Print‑based testing
-- Driver program testing
-- Verifying logic and edge cases
-
-You should be able to explain:
-- What you tested
-- How you tested it
-- What you discovered or fixed
-
----
-
-## 🗂️ Required Project Components
-
-Your final project must include:
-
-- ✅ Multiple interacting Java classes
-- ✅ Encapsulation (`private` fields, appropriate getters/setters)
-- ✅ Arrays and/or ArrayLists
-- ✅ A purposeful **2D array**
-- ✅ A working driver program (`main`)
-- ✅ A class diagram matching your final code
-- ✅ Clear documentation
-- ✅ A program that runs and works
-
-Inheritance and interfaces are optional but encouraged.
-
----
-
-## 🤖 Using AI (Allowed, With Responsibility)
-
-You may use AI to:
-- Organize ideas
-- Plan sprints
-- Debug code
-- Suggest design improvements
-
-You must:
-- Document how you used AI
-- Review and evaluate AI suggestions
-- Understand and explain your final code
-
-AI should act like:
-> A junior developer you supervise — not something that builds the project for you.
-
----
-
-## 📘 Project Journal
-
-All planning, work logs, testing notes, and reflections live in **your project journal**.
-
-If it happened during this project, it should be documented there.
-
----
-
-## ✅ Final Submission Expectations
-
-By the end of the project:
-- Your program should run reliably
-- Your technical requirements should be met
-- Your code should be readable and organized
-- Your repository should look **professional**
-
----
-
-# ✨ Final Step: README Update (Very Important)
-
-When your project is complete, you must **rewrite this README**  
-so it reflects **your software**, not the assignment.
-
-Your final README should include:
-
----
-
-## 🔹 Project Title
-
-## 🔹 What This Software Does
-Explain your project in plain language.
-
-## 🔹 Who It’s For
-Describe the user and the problem being solved.
-
-## 🔹 How to Run the Program
-Clear steps so someone else can run your project.
-
-## 🔹 Technical Overview
-Brief description of:
-- Main classes
-- Key data structures
-- Program logic
-
-## 🔹 Class Diagram
-Include or link your final class diagram.
-
-## 🔹 Known Limitations / Future Improvements
-What works well, and what you would improve with more time.
-
----
-
-## 🎯 Final Reminder
-
-This repository represents **you as a developer**.
-
-Take pride in:
-- Your process
-- Your commits
-- Your code
-- Your documentation
-
-Build something real.  
-Build it thoughtfully.  
-Build it well.
+- **Student name:** Kim Nguyen
+- **Course:** AP Computer Science A
+- **What I learned:** I learned how to use Java collections to manage classroom data and how to separate user interaction from attendance logic.

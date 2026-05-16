@@ -2,6 +2,14 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class App {
+    /**
+     * Entry point for the attendance seating chart application.
+     * It collects student names and attendance status, displays the seating chart,
+     * and prints lists of absent and late students.
+     *
+     * @param args command-line arguments (not used)
+     * @throws Exception if an input or runtime error occurs
+     */
     public static void main(String[] args) throws Exception {
 
         // take attendence from rows
