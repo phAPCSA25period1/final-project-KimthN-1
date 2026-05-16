@@ -55,3 +55,8 @@ I used AI tools for brainstorming and debugging while writing this project. AI s
 - **Student name:** Kim Nguyen
 - **Course:** AP Computer Science A
 - **What I learned:** I learned how to use Java collections to manage classroom data and how to separate user interaction from attendance logic.
+
+## 8. Class Diagram
+
+<img width="574" height="438" alt="image" src="https://github.com/user-attachments/assets/fd2bafa2-98b1-4b9a-b53e-83487241b2f7" />
+
