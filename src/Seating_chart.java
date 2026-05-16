@@ -6,29 +6,34 @@ import java.util.ArrayList;
 //then ask 2nd round are they still absent
 //array lists for each row
 public class Seating_chart {
-    private ArrayList<Student> RowA;
-    private ArrayList<Student> RowB;
-    private ArrayList<Student> RowC;
-    private ArrayList<Student> RowD;
-    private ArrayList<Student> RowE;
-    private ArrayList<Student> RowF;
-    private ArrayList<Student> RowG;
-    private ArrayList<Student> RowH;
-    private ArrayList<Student> RowI;
+    private ArrayList<ArrayList<Student>> rows;
 
     // constructor
     Seating_chart(ArrayList<Student> RowA, ArrayList<Student> RowB, ArrayList<Student> RowC, ArrayList<Student> RowD,
             ArrayList<Student> RowE, ArrayList<Student> RowF, ArrayList<Student> RowG, ArrayList<Student> RowH,
             ArrayList<Student> RowI) {
-        this.RowA = RowA;
-        this.RowB = RowB;
-        this.RowC = RowC;
-        this.RowD = RowD;
-        this.RowE = RowE;
-        this.RowF = RowF;
-        this.RowG = RowG;
-        this.RowH = RowH;
-        this.RowI = RowI;
+        rows = new ArrayList<>();
+        rows.add(RowA);
+        rows.add(RowB);
+        rows.add(RowC);
+        rows.add(RowD);
+        rows.add(RowE);
+        rows.add(RowF);
+        rows.add(RowG);
+        rows.add(RowH);
+        rows.add(RowI);
+    }
+
+    public int size() {
+        return rows.size();
+    }
+
+    public ArrayList<Student> get(int index) {
+        return rows.get(index);
+    }
+
+    public ArrayList<Student> these_are_absent_students() {
+        return these_are_absent_students(rows);
     }
 
     // method that says which students are absent
@@ -45,10 +50,6 @@ public class Seating_chart {
         }
         return absentList;
     }
-
-    
-
-
 
     // are they late or absent?
     // public

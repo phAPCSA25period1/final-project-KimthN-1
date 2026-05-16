@@ -21,7 +21,6 @@ public class App {
             Student newStudent = new Student(inputNameA, statusA);
             rowA.add(newStudent);
         }
-        System.out.println(rowA);
 
         ArrayList<Student> rowB = new ArrayList<Student>();
         boolean statusB = true;
@@ -38,7 +37,6 @@ public class App {
             Student newStudent = new Student(inputNameB, statusB);
             rowB.add(newStudent);
         }
-        System.out.println(rowB);
 
         ArrayList<Student> rowC = new ArrayList<Student>();
         boolean statusC = true;
@@ -152,10 +150,47 @@ public class App {
             rowI.add(newStudent);
         }
 
-        scanner.close();
+        Seating_chart seatingChart = new Seating_chart(rowA, rowB, rowC, rowD, rowE, rowF, rowG, rowH, rowI);
 
-        Seating_chart bah = new Seating_chart(rowA, rowB, rowC, rowD, rowE, rowF, rowG, rowG, rowI);
-        String result = bah.toString();
-        System.out.println(result);
+        for (int i = 0; i < seatingChart.size(); i++) {
+            ArrayList<Student> row = seatingChart.get(i);
+            char rowLabel = (char) ('A' + i);
+            System.out.print("Row " + rowLabel + ": ");
+            for (int j = 0; j < row.size(); j++) {
+                System.out.print(row.get(j)); // calls Student.toString()
+                if (j < row.size() - 1) {
+                    System.out.print(" | ");
+                }
+            }
+            System.out.println();
+        }
+
+        ArrayList<Student> absentList = seatingChart.these_are_absent_students();
+        for (Student student : absentList) {
+            System.out.println(student.getName());
+        }
+
+        // Ask which absent students are now present (late)
+        ArrayList<Student> lateList = new ArrayList<>();
+        for (Student student : absentList) {
+            System.out.println("Is " + student.getName() + " here now? (Y or N)");
+            String response = scanner.nextLine();
+            if (response.equalsIgnoreCase("Y")) {
+                lateList.add(student);
+            }
+        }
+
+        System.out.println("\nLate students:");
+        for (Student student : lateList) {
+            System.out.println(student.getName());
+            System.out.println("\nEmail template:");
+            System.out.println("This student was marked absent initially, but they arrived late.");
+            System.out.println("The student is " + student.getName() + ".");
+            System.out.println("Please change their attendance accordingly.");
+            System.out.println();
+        }
+
+        scanner.close();
     }
+
 }
